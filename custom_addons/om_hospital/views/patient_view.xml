@@ -1,22 +1,14 @@
 <odoo>
 
-    <record id="view_hospital_patient_form" model="ir.ui.view">
-        <field name="name">hospital.patient.form</field>
+    <record id="view_hospital_patient_tree" model="ir.ui.view">
+        <field name="name">hospital.patient.tree</field>
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
-            <form>
-                <sheet>
-                    <group>
-                    <group>
-                        <field name="name"/>
-                        <field name="age"/>
-                    </group>
-                    <group>
-                        <field name="gender"/>
-                    </group>
-                    </group>
-                </sheet>
-            </form>
+            <tree>
+                <field name="name" string="patient name"/>
+                <field name="age"/>
+                <field name="gender"/>
+            </tree>
         </field>
     </record>
 
