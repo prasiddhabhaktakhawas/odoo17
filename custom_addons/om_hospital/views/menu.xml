@@ -11,7 +11,7 @@
               parent="menu_hospital_root"
               sequence="0"/>
 
-    <menuitem id="menu_apointment_master"
+    <menuitem id="menu_appointment_master"
               name="Patient"
               sequence="0"/>
 
