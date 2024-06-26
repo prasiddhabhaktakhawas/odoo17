@@ -30,6 +30,19 @@
                             <field name="appointment_time"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="prescription" name="prescription">
+                            <group>
+                                <field name="gender"/>
+                            </group>
+                        </page>
+                        <page string="pharmacy" name="pharmacy">
+                            <group>
+                                <field name="booking_date"/>
+                            </group>
+                        </page>
+                    </notebook>
+
                 </sheet>
                 <!-- Chatter, like comment section -->
                 <div class="oe_chatter">
@@ -53,10 +66,9 @@
     <record id="action_hospital_appointment" model="ir.actions.act_window"> <!-- actual view containing records -->
         <field name="name">Appointment</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">hospital.appointment</field><!-- create view according to the variables defined in model named hospital.appointment-->
+        <field name="res_model">hospital.appointment</field> <!-- create view according to the variables defined in model named hospital.appointment-->
         <field name="view_mode">tree,form</field>
-        <field name="context">{'search_default_filter_male': 1}
-        </field> <!-- for search 'search_default_<filter_name>': Boolean_value, 1 or 0 -->
+        <field name="context">{'search_default_filter_male': 1}</field> <!-- for search 'search_default_<filter_name>': Boolean_value, 1 or 0 -->
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 create your first appointment !
