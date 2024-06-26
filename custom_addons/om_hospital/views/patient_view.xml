@@ -1,6 +1,6 @@
 <odoo>
 
-    <record id="view_hospital_patient_tree" model="ir.ui.view">
+    <record id="view_hospital_patient_tree" model="ir.ui.view"> <!-- tree view -->
         <field name="name">hospital.patient.tree</field>
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
@@ -13,13 +13,13 @@
         </field>
     </record>
 
-    <record id="view_hospital_patient_form" model="ir.ui.view">
+    <record id="view_hospital_patient_form" model="ir.ui.view"><!-- form view -->
         <field name="name">hospital.patient.form</field>
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group>
+                    <group> <!--  -->
                         <group>
                             <field name="name"/>
                             <field name="age"/>
@@ -27,6 +27,7 @@
                         <group>
                             <field name="ref"/>
                             <field name="gender"/>
+                            <field name="active"/>
                         </group>
                     </group>
                 </sheet>
@@ -34,18 +35,27 @@
         </field>
     </record>
 
-    <record id="view_hospital_patient_search" model="ir.ui.view">
+    <record id="view_hospital_patient_search" model="ir.ui.view"> <!-- search bar, contains filters -->
         <field name="name">hospital.patient.search</field>
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name" string="patient name" filter_domain="['|',('name','ilike',self),('ref','ilike',self)]"/>
+                <field name="name" string="patient name" filter_domain="['|',('name','ilike',self),('ref','ilike',self)]"/><!-- filter domain is used to filter out the records in multiple fields like name and ref. | is used as or operator between two filters. Why is it used? Provides flexibility, if user don't remember which field the data belongs to, this can be helpful. Name and reference are similar thing. Reference is also a name anyways-->
                 <field name="ref"/>
+                <field name="age"/>
+                <field name="gender"/>
+                <filter name="filter_male" string="Male" domain="[('gender','=','male')]"/> <!-- provides dedicated filters buttons for the fields-->
+                <filter name="filter_female" string="Female" domain="[('gender','=','female')]"/>
+                <separator/> <!-- separator acts as a way to separate filters individually. If there is no separator like in male and female,then when both filter is used, it will be combined as male or female. Separator is like AND operation between two filters-->
+                <filter name="filter_kids" string="Kids" domain="[('age','&lt;=',5)]"/>
+                <group expand="0" string="Group By"> <!-- group by groups the records by an attribute like male and female -->
+                    <filter string="Gender" name="group_by_gender" context="{'group_by':'gender'}"/>
+                </group>
             </search>
         </field>
     </record>
 
-    <record id="action_hospital_patient" model="ir.actions.act_window">
+    <record id="action_hospital_patient" model="ir.actions.act_window"> <!-- actual view containing records -->
         <field name="name">Patient</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.patient</field>
