@@ -22,6 +22,7 @@
                     <group> <!--  -->
                         <group>
                             <field name="name"/>
+                            <field name="date_of_birth"/>
                             <field name="age"/>
                         </group>
                         <group>
@@ -52,8 +53,8 @@
                 <field name="gender"/>
                 <filter name="filter_male" string="Male" domain="[('gender','=','male')]"/> <!-- provides dedicated filters buttons for the fields-->
                 <filter name="filter_female" string="Female" domain="[('gender','=','female')]"/>
-                <separator/> <!-- separator acts as a way to separate filters individually. If there is no separator like in male and female,then when both filter is used, it will be combined as male or female. Separator is like AND operation between two filters-->
-                <filter name="filter_kids" string="Kids" domain="[('age','&lt;=',5)]"/>
+<!--                <separator/> &lt;!&ndash; separator acts as a way to separate filters individually. If there is no separator like in male and female,then when both filter is used, it will be combined as male or female. Separator is like AND operation between two filters&ndash;&gt;-->
+<!--                <filter name="filter_kid s" string="Kids" domain="[('age','&lt;=',5)]"/>-->
                 <group expand="0" string="Group By"> <!-- group by groups the records by an attribute like male and female -->
                     <filter string="Gender" name="group_by_gender" context="{'group_by':'gender'}"/>
                 </group>
