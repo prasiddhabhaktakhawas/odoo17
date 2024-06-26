@@ -4,6 +4,7 @@ from odoo import api, fields, models
 class HospitalPatient(models.Model):
     _name = "hospital.patient"
     _description = "Hospital Patient"
+    _inherit = ['mail.thread', 'mail.activity.mixin'] #inherited models from mail module
 
     name = fields.Char(string='Name')
     ref = fields.Char(string='Ref')
