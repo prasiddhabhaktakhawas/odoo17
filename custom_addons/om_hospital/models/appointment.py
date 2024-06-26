@@ -18,6 +18,11 @@ class HospitalPatient(models.Model):
         ('1', 'Low'),
         ('2', 'High'),
         ('3', 'Very High')], string='Priority')
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('in_consultation', 'In consultation'),
+        ('done', 'Done'),
+        ('cancel', 'Cancelled')], default='draft', string='Status', required=True)
 
     @api.onchange('patient_id') #when there is change in the patient_id field, it auto set reference
     def onchange_patient_id(self):
