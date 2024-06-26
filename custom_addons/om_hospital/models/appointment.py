@@ -5,6 +5,7 @@ class HospitalPatient(models.Model):
     _name = "hospital.appointment"
     _description = "Hospital Appointment"
     _inherit = ['mail.thread', 'mail.activity.mixin'] #inherited models from mail module
+    _rec_name = 'ref'
 
     patient_id = fields.Many2one('hospital.patient', string="Patient") #all the records of patients will be shown in drop down menu
     gender=fields.Selection(related='patient_id.gender') #automatically gets gender from patient_id

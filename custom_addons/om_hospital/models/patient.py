@@ -13,6 +13,8 @@ class HospitalPatient(models.Model):
     age = fields.Integer(string="Age", compute='_compute_age', tracking=True)
     gender = fields.Selection([('male','Male'),('female','Female')], string="Gender", tracking=True, default="female")
     active = fields.Boolean(string="Active", default=True) #used for archiving
+    appointment = fields.Many2one('hospital.appointment',string='Appointments')
+
     @api.depends('date_of_birth') #resonsible for instant change in computed field. otherwise, the field value only changes when saved
     def _compute_age(self): # computes age automatically
         for rec in self:    # self represents all the records, so we need to loop
