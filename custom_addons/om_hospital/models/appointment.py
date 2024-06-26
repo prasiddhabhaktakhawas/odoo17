@@ -13,6 +13,11 @@ class HospitalPatient(models.Model):
     booking_date = fields.Date(string="Booking Date", default=fields.Date.context_today)
     ref = fields.Char(string="reference")
     prescription = fields.Html(string='Prescription')
+    priority = fields.Selection([
+        ('0', 'Normal'),
+        ('1', 'Low'),
+        ('2', 'High'),
+        ('3', 'Very High')], string='Priority')
 
     @api.onchange('patient_id') #when there is change in the patient_id field, it auto set reference
     def onchange_patient_id(self):

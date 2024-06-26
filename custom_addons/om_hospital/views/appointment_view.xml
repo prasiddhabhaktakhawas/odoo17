@@ -4,7 +4,7 @@
         <field name="name">hospital.appointment.tree</field>
         <field name="model">hospital.appointment</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree create="0" delete="0" edit="0"> <!-- disable create, delete and edit options. create works for duplicate as well. -->
                 <field name="patient_id"/>
                 <field name="ref"/>
                 <field name="appointment_time"/>
@@ -19,6 +19,11 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="priority" widget="priority" class="mr-3"/>
+                        </h1>
+                    </div>
                     <group> <!--  -->
                         <group>
                             <field name="patient_id"/>
