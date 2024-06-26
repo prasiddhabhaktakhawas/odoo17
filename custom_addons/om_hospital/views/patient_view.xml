@@ -57,6 +57,9 @@
                 <group expand="0" string="Group By"> <!-- group by groups the records by an attribute like male and female -->
                     <filter string="Gender" name="group_by_gender" context="{'group_by':'gender'}"/>
                 </group>
+                <searchpanel>
+                    <field name="gender" enable_counters="1" icono="fa-users" select="multi"/>
+                </searchpanel>
             </search>
         </field>
     </record>
