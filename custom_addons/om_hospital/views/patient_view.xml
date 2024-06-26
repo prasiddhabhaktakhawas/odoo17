@@ -58,9 +58,9 @@
     <record id="action_hospital_patient" model="ir.actions.act_window"> <!-- actual view containing records -->
         <field name="name">Patient</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">hospital.patient</field>
+        <field name="res_model">hospital.patient</field><!-- create view according to the variables defined in model named hospital.patient-->
         <field name="view_mode">tree,form</field>
-        <field name="context">{}</field> <!-- 'default_<field_name>':'field_value_you_want_to_set' -->
+        <field name="context">{'search_default_filter_male': 1}</field> <!-- for search 'search_default_<filter_name>': Boolean_value, 1 or 0 -->
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 create your first patient !
