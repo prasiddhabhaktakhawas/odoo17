@@ -28,7 +28,14 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}" statusbar_visible="draft, in_consultation, done"/> <!-- it is a vertical bar on top of sheet, that has tabs according to states mentioned in python model -->
+                    <!-- options="{'clickable':'1'}" -->
+                    <!-- these button controls the state variable in the statusbar by triggering the corresponding function in the model python file -->
+                    <button name="action_in_consultation" string="In Consultation" type="object" invisible="state not in ('draft')"/>
+                    <button name="action_done" string="Mark as done" type="object" invisible="state not in ('in_consultation')"/> <!-- states variable define, in which present state this button should be visible -->
+                    <button name="action_cancel" string="cancel" type="object" invisible="state not in ('draft','in_consultation')"/>
+                    <button name="action_draft" string="draft" type="object" invisible="state not in ('cancel')"/>
+
+                    <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft, in_consultation, done"/> <!-- it is a vertical bar on top of sheet, that has tabs according to states mentioned in python model -->
                 </header>
                 <sheet>
                     <div class="oe_title">
