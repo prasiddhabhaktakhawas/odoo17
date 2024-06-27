@@ -36,7 +36,7 @@
                             <field name="priority" widget="priority" class="mr-3"/> <!-- priority widget that gives priority with stars -->
                         </h1>
                     </div>
-                    <group> <!--  -->
+                    <group> <!-- groups in like row and column in html -->
                         <group>
                             <field name="patient_id"/>
                             <field name="ref"/>
@@ -50,10 +50,10 @@
                             <button name="%(om_hospital.action_hospital_patient)d" string="action button" help="on clicking this you will be redirected to patient window" confirm="are you sure to open the patient action?" type="action" class="oe_ highlight"/> <!-- triggers window function. inside the %() we need to place xml id of window. confirm for popup window. help for button hovering info -->
                         </group>
                     </group>
-                    <notebook>
+                    <notebook> <!-- notebook is like a switchable tab, where pages in the tab. -->
                         <page string="prescription" name="prescription">
                             <group>
-                                <field name="prescription" placeholder="enter your prescription"/>
+                                <field name="prescription" placeholder="enter your prescription" options="{'collaborative': true}"/>
                             </group>
                         </page>
                         <page string="pharmacy" name="pharmacy">
