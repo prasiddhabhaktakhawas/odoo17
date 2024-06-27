@@ -6,7 +6,7 @@
     'sequence': -100,
     'summary': 'Hospital management system',
     'description': """Hospital Management System""",
-    'depends': ['mail'], #inherited module is listed here
+    'depends': ['mail', 'product'], #inherited module is listed here
     'data': [
         'security/ir.model.access.csv',
         'views/menu.xml',
