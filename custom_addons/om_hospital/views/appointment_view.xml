@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <tree create="0" delete="0" edit="0" decoration-success="state=='done'" decoration-warning="state=='in_consultation'" decoration-info="state=='draft'" decoration-danger="state=='cancelled'"> <!-- disable create, delete and edit options. create works for duplicate as well. -->
                 <field name="patient_id"/>
+                <field name="doctor_id" widget="many2one_avatar_user"/> <!-- many2one_avatar makes appear photo of the user(here doctor), and _user lets us message that user  -->
                 <field name="ref" optional="show"/>
                 <field name="gender" optional="hide"/>
                 <field name="appointment_time"/>
@@ -40,6 +41,7 @@
                             <field name="patient_id"/>
                             <field name="ref"/>
                             <field name="gender"/>
+                            <field name="doctor_id" widget="many2one_avatar_user"/>
                             <field name="booking_date" help="Date of Booking"/>
                         </group>
                         <group>

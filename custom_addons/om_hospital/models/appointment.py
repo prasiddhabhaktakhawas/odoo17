@@ -23,6 +23,7 @@ class HospitalPatient(models.Model):
         ('in_consultation', 'In consultation'),
         ('done', 'Done'),
         ('cancel', 'Cancelled')], default='draft', string='Status', required=True)
+    doctor_id = fields.Many2one('res.users', string='Doctor')
 
     @api.onchange('patient_id') #when there is change in the patient_id field, it auto set reference
     def onchange_patient_id(self):
