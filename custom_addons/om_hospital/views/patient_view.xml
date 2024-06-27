@@ -79,6 +79,7 @@
         </field>
     </record>
 
+    <!-- these menu that has parent opens in the drop down list -->
     <menuitem id="menu_patient"
               name="patient_detail"
               parent="menu_patient_master"

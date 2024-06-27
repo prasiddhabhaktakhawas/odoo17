@@ -2,7 +2,7 @@
 
 <odoo>
 
-    <menuitem id="menu_hospital_root"
+    <menuitem id="menu_hospital_root" <!-- menu is the option that occurs in the horizontal bar of the top of the page -->
               name="hospital"
               sequence="0"/>
 

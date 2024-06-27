@@ -9,6 +9,7 @@
                 <field name="ref"/>
                 <field name="appointment_time"/>
                 <field name="booking_date"/>
+                <field name="activity_ids" widget="list_activity"/>  <!-- activity_ids is inherited from mail. list activity adds icons according to activity chosen. like call icon when call is used -->
                 <field name="state"
                        decoration-success="state=='done'"
                        decoration-info="state=='draft'"
