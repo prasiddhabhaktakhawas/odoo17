@@ -27,3 +27,6 @@ class HospitalPatient(models.Model):
     @api.onchange('patient_id') #when there is change in the patient_id field, it auto set reference
     def onchange_patient_id(self):
         self.ref=self.patient_id.ref
+
+    def action_test(self):
+        print("clicked")

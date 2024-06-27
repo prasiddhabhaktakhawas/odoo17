@@ -24,7 +24,7 @@
                 <sheet>
                     <div class="oe_title">
                         <h1>
-                            <field name="priority" widget="priority" class="mr-3"/>
+                            <field name="priority" widget="priority" class="mr-3"/> <!-- priority widget that gives priority with stars -->
                         </h1>
                     </div>
                     <group> <!--  -->
@@ -36,6 +36,8 @@
                         </group>
                         <group>
                             <field name="appointment_time"/>
+                            <button name="action_test" string="Object Button" type="object" class="oe_highlight"/> <!-- object button calls a function, here function named action_test -->
+                            <button name="%(om_hospital.action_hospital_patient)d" string="action button" type="action" class="oe_ highlight"/> <!-- triggers window function. inside the %() we need to place xml id of window -->
                         </group>
                     </group>
                     <notebook>
