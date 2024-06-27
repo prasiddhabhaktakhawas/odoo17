@@ -9,6 +9,12 @@
                 <field name="ref"/>
                 <field name="appointment_time"/>
                 <field name="booking_date"/>
+                <field name="state"
+                       decoration-success="state=='done'"
+                       decoration-info="state=='draft'"
+                       decoration-danger="state=='cancelled'"
+                       decoration-warning="state=='in_consultation'"
+                       widget="badge"/> <!-- badge widget is like a badge instead of plain text. decoration success means green color, info means blue -->
             </tree>
         </field>
     </record>
@@ -19,7 +25,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}" statusbar_visible="draft, in_consultation, done"/>
+                    <field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}" statusbar_visible="draft, in_consultation, done"/> <!-- it is a vertical bar on top of sheet, that has tabs according to states mentioned in python model -->
                 </header>
                 <sheet>
                     <div class="oe_title">
