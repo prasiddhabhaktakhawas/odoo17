@@ -29,4 +29,10 @@ class HospitalPatient(models.Model):
         self.ref=self.patient_id.ref
 
     def action_test(self):
-        print("clicked")
+        return {
+            'effect':{  #rainbow effect when button clicked
+                'fadeout': 'slow',
+                'message': 'Click Successful',
+                'type': 'rainbow_man'
+            }
+        }
