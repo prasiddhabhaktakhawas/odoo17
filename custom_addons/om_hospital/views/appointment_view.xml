@@ -32,12 +32,12 @@
                             <field name="patient_id"/>
                             <field name="ref"/>
                             <field name="gender"/>
-                            <field name="booking_date"/>
+                            <field name="booking_date" help="Date of Booking"/>
                         </group>
                         <group>
                             <field name="appointment_time"/>
-                            <button name="action_test" string="Object Button" type="object" confirm="are you sure you want to say hello world?" class="oe_highlight"/> <!-- object button calls a function, here function named action_test. oe highlight makes the button blue-->
-                            <button name="%(om_hospital.action_hospital_patient)d" string="action button" confirm="are you sure to open the patient action?" type="action" class="oe_ highlight"/> <!-- triggers window function. inside the %() we need to place xml id of window -->
+                            <button name="action_test" string="Object Button" type="object" help="a message will be printed in the log" confirm="are you sure you want to say hello world?" class="oe_highlight"/> <!-- object button calls a function, here function named action_test. oe highlight makes the button blue-->
+                            <button name="%(om_hospital.action_hospital_patient)d" string="action button" help="on clicking this you will be redirected to patient window" confirm="are you sure to open the patient action?" type="action" class="oe_ highlight"/> <!-- triggers window function. inside the %() we need to place xml id of window. confirm for popup window. help for button hovering info -->
                         </group>
                     </group>
                     <notebook>

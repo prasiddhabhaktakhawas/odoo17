@@ -11,7 +11,7 @@ class HospitalPatient(models.Model):
     gender=fields.Selection(related='patient_id.gender') #automatically gets gender from patient_id
     appointment_time = fields.Datetime(string="appointment time", default=fields.Datetime.now)
     booking_date = fields.Date(string="Booking Date", default=fields.Date.context_today)
-    ref = fields.Char(string="reference")
+    ref = fields.Char(string="reference", help="reference from patient record") #help is for text that appears when hovering over the label. It can also be done from xml field.
     prescription = fields.Html(string='Prescription')
     priority = fields.Selection([
         ('0', 'Normal'),
