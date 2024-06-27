@@ -6,9 +6,10 @@
         <field name="arch" type="xml">
             <tree create="0" delete="0" edit="0" decoration-success="state=='done'" decoration-warning="state=='in_consultation'" decoration-info="state=='draft'" decoration-danger="state=='cancelled'"> <!-- disable create, delete and edit options. create works for duplicate as well. -->
                 <field name="patient_id"/>
-                <field name="ref"/>
+                <field name="ref" optional="show"/>
+                <field name="gender" optional="hide"/>
                 <field name="appointment_time"/>
-                <field name="booking_date"/>
+                <field name="booking_date" optional="show"/>
                 <field name="activity_ids" widget="list_activity"/>  <!-- activity_ids is inherited from mail. list activity adds icons according to activity chosen. like call icon when call is used -->
                 <field name="state"
                        decoration-success="state=='done'"
