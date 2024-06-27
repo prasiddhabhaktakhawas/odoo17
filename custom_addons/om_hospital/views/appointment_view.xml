@@ -4,7 +4,7 @@
         <field name="name">hospital.appointment.tree</field>
         <field name="model">hospital.appointment</field>
         <field name="arch" type="xml">
-            <tree create="0" delete="0" edit="0"> <!-- disable create, delete and edit options. create works for duplicate as well. -->
+            <tree create="0" delete="0" edit="0" decoration-success="state=='done'" decoration-warning="state=='in_consultation'" decoration-info="state=='draft'" decoration-danger="state=='cancelled'"> <!-- disable create, delete and edit options. create works for duplicate as well. -->
                 <field name="patient_id"/>
                 <field name="ref"/>
                 <field name="appointment_time"/>
