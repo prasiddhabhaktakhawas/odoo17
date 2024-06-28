@@ -24,6 +24,7 @@
                         </group>
                         <group>
                             <field name="color" widget="color_picker"/> <!-- color_picker widget makes clickable color palette -->
+                            <field name="color_2" widget="color" groups="base.group_no_one"/> <!-- color picker from color spectrum, and base.group_no_one means only visible in debug mode -->
                             <field name="active" widget="boolean_toggle"/> <!-- instead of checkbox, now boolean_toggle creates toggle switch -->
                         </group>
                     </group>

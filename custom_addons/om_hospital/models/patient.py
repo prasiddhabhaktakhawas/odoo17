@@ -15,6 +15,7 @@ class HospitalPatient(models.Model):
     active = fields.Boolean(string="Active", default=True) #used for archiving
     appointment = fields.Many2one('hospital.appointment',string='Appointments')
     image=fields.Image(string="Image")
+    tag_ids = fields.Many2many('patient.tag',string='Tags')
 
     @api.depends('date_of_birth') #resonsible for instant change in computed field. otherwise, the field value only changes when saved
     def _compute_age(self): # computes age automatically

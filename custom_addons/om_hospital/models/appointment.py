@@ -26,7 +26,7 @@ class HospitalAppointment(models.Model):
         ('done', 'Done'),
         ('cancel', 'Cancelled')], default='draft', string='Status', required=True)
     doctor_id = fields.Many2one('res.users', string='Doctor')  # many patient can be associated with one doctor, res.users refers to the internal users from the odoo ui itself
-    pharmacy_line_ids = fields.One2many('appointment.pharmacy.lines', 'appointment_id', string="Pharmacy Lines")
+    pharmacy_line_ids = fields.One2many('appointment.pharmacy.lines', 'appointment_id', string="Pharmacy Lines") # when one to many field is created, many to one field must be created as well in the corresponsing model, here appointment_id
     hide_sales_price = fields.Boolean(string="Hide Sales Price")
 
     @api.onchange('patient_id')  #when there is change in the patient_id field, it auto set reference
