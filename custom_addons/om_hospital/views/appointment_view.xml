@@ -31,7 +31,7 @@
                     <!-- options="{'clickable':'1'}" -->
                     <!-- these button controls the state variable in the statusbar by triggering the corresponding function in the model python file -->
                     <button name="action_in_consultation" string="In Consultation" data-hotkey="x" type="object" invisible="state not in ('draft')"/>
-                    <button name="action_done" string="Mark as done" type="object" invisible="state not in ('in_consultation')"/> <!-- states variable define, in which present state this button should be visible -->
+                    <button name="action_done" string="Mark as done" type="object" invisible="state not in ('in_consultation')"/> <!-- states variable define, in which present state this button should be visible . states is deprecated, so instead invisible is used. invisible means which state the button should be invisible in, also not in is just its opposite, that means which states it should be visible in -->
                     <button name="action_cancel" string="cancel" type="object" invisible="state not in ('draft','in_consultation')"/>
                     <button name="action_draft" string="draft" type="object" data-hotkey="z" invisible="state not in ('cancel')"/>
 
@@ -53,7 +53,7 @@
                         </group>
                         <group>
                             <field name="appointment_time"/>
-                            <field name="hide_sales_price"/>
+                            <field name="hide_sales_price" groups="base.group_no_one"/>
                             <button name="action_test" string="Object Button" type="object" help="a message will be printed in the log" confirm="are you sure you want to say hello world?" class="oe_highlight"/> <!-- object button calls a function, here function named action_test. oe highlight makes the button blue-->
                             <button name="%(om_hospital.action_hospital_patient)d" string="action button" help="on clicking this you will be redirected to patient window" confirm="are you sure to open the patient action?" type="action" class="oe_ highlight"/> <!-- triggers window function. inside the %() we need to place xml id of window. confirm for popup window. help for button hovering info -->
                         </group>
@@ -70,13 +70,13 @@
                                 <field name="pharmacy_line_ids">
                                     <tree editable="bottom"> <!-- editable bottom adds new entry in the tree in the bottom, editable top adds on top, if editable attribute is removed then the form is opened when clicked -->
                                         <field name="product_id"/>
-                                        <field name="price_unit" attrs="{'column_invisible':[('parent.hide_sales_price', '=', True)]}"/> <!-- parent refers to the model it is refering to. the model is mentioned in the field on the top of this form record tag -->
+                                        <field name="price_unit" attrs="{'column_invisible':[('parent.hide_sales_price', '=', 'True')]}"/> <!-- parent refers to the model it is referring to. the model is mentioned in the field on the top of this form record tag -->
                                         <field name="qty"/>
                                     </tree>
                                     <form>
                                         <group>
                                             <field name="product_id"/>
-                                            <field name="price_unit" attrs="{'column_invisible':[('parent.hide_sales_price', '=', True)]}"/>
+                                            <field name="price_unit" attrs="{'column_invisible':[('parent.hide_sales_price', '=', 'True')]}"/>
                                             <field name="qty"/>
                                         </group>
                                     </form>
