@@ -5,7 +5,7 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name" string="patient name"/>
+                <field name="name" string="patient name"/> <!-- string in field appears as label before the field -->
                 <field name="age"/>
                 <field name="ref"/>
                 <field name="gender"/>
