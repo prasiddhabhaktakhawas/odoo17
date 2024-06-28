@@ -19,7 +19,8 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group> <!--  -->
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <group> <!-- groups in like row and column in html -->
                         <group>
                             <field name="name"/>
                             <field name="date_of_birth"/>
